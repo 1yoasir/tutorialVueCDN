@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+
+        <p>Agregar Fruta</p>
+        <input type="text" v-model="nuevaFruta">
+        <!-- <button v-on:click="agregarFruta">Agregar</button> -->
+        <button @click="agregarFruta">Agregar</button>
+
+        <p>Agregar Persona</p>
+        <input type="text" v-model="nuevaPersonaNombre">
+        <input type="text" v-model="nuevaPersonaEstado">
+        <button @click="agregarPersona">Agregar Persona</button>
+        
+        <h1>Frutas</h1>
+        <ul>
+            <li v-for="fruta of frutas">{{fruta}}</li>
+        </ul>
+
+        <h1>Personas</h1>
+        <ul>
+            <li v-for="persona of personas">{{persona.nombre}} esta {{persona.estado}}
+                <span v-if="persona.nombre == 'Elena' && persona.estado == 'Casada'"> con yoasir</span>
+                <span v-if="persona.nombre == 'Yoasir' && persona.estado == 'Casado'"> con Elena</span>
+            </li>
+        </ul>
+
+        <h1>Total</h1>
+        <p>Personas casadas: {{personasCasadas}}</p>
+        <p>Personas solteras: {{personasSolteras}}</p>
+        <h4>Total Personas: {{sumarPersonas}}</h4>
+        <h4>Total Frutas {{sumarFrutas}}</h4>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="01.js"></script>
+</body>
+</html>
